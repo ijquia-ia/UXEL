@@ -3,7 +3,13 @@
 import React, { useRef, useState } from 'react'
 import { motion, useSpring } from 'framer-motion'
 
-interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+// Omit props that conflict between HTMLButtonElement and framer-motion's motion.button
+type SafeButtonProps = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  'onAnimationStart' | 'onDrag' | 'onDragEnd' | 'onDragStart'
+>
+
+interface MagneticButtonProps extends SafeButtonProps {
   children: React.ReactNode
   className?: string
   strength?: number // Magnetic pull strength (default 0.35)

@@ -6,7 +6,20 @@ import { Sparkles, ArrowRight, CheckCircle2, RotateCcw, AlertTriangle, ChevronRi
 import { Button } from '@/components/ui/button'
 import { FadeInWhenVisible } from '@/components/ui/FadeInWhenVisible'
 
-const steps = [
+type StepOption = {
+  label: string
+  points: number
+  recommendation?: string
+}
+
+type Step = {
+  id: number
+  title: string
+  subtitle: string
+  options: StepOption[]
+}
+
+const steps: Step[] = [
   {
     id: 1,
     title: '¿Cuál es el mayor cuello de botella actual en tu empresa?',
