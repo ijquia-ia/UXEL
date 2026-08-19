@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Operata AI | Agentes de IA Empresariales que Ejecutan Acciones Reales en LATAM</title>
+  <meta name="description" content="Plataforma de agentes de IA para medianas y grandes empresas en Colombia y LATAM. Despliega agentes que ejecutan acciones reales en tu ERP, CRM y WhatsApp Business con gobernanza nativa.">
+  <meta name="keywords" content="agentes de IA, inteligencia artificial empresas colombia, automatizacion CX, bots whatsapp business, integracion ERP CRM, gobernanza IA">
+  <meta name="author" content="Operata AI">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       REAL-TIME LIVE ACTIVITY TICKER TOAST
+       ========================================== -->
+  <div class="live-ticker-toast" id="live-activity-ticker">
+    <div class="ticker-pulse"></div>
+    <div class="ticker-text" id="ticker-activity-text">
+      <strong>Hace 8s:</strong> Agente en Bogotá procesó reembolso #COL-9821 en <strong>Siigo ERP</strong>
+    </div>
+    <button class="ticker-close" id="ticker-close-btn" aria-label="Cerrar">&times;</button>
+  </div>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION
+       ========================================== -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <!-- REEMPLAZAR CON TU NOMBRE DE MARCA O LOGO: Operata AI -->
+        <span>Operata<span class="text-highlight">.ai</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#solucion">Producto</a></li>
+          <li><a href="#orquestador">Orquestador</a></li>
+          <li><a href="#diferenciadores">Comparativa</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#gobernanza">Gobernanza</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#precios" class="btn btn-secondary btn-sm">Ver Precios</a>
+        <a href="#demo" class="btn btn-primary btn-sm trigger-demo-modal">Solicitar Demo</a>
+        <button class="menu-toggle" aria-label="Abrir Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION WITH PARTICLE CANVAS
+       ========================================== -->
+  <section class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-glow"></div>
+    
+    <div class="container">
+      <div class="hero-content reveal active">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>IA de Acción Real para Empresas de Colombia & LATAM</span>
+        </div>
+
+        <!-- REEMPLAZAR CON TU PROPUESTA DE VALOR DEFINITIVA -->
+        <h1>Agentes de IA que no solo responden.<br><span class="text-highlight">Ejecutan acciones reales</span> en sus sistemas.</h1>
+
+        <p class="hero-subtitle">
+          Pase de pilotos estancados a producción enterprise en días. Permita que sus agentes de atención al cliente y operaciones emitan devoluciones en su ERP, actualicen tickets en su CRM y resuelvan trámites directamente en WhatsApp Business con gobernanza nativa.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#demo" class="btn btn-primary trigger-demo-modal">
+            Agendar Demo Personalizada
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#precios" class="btn btn-secondary">
+            Ver Planes y Precios (COP / USD)
+          </a>
+        </div>
+
+        <div class="hero-guarantee">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E599" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Precio predecible sin sorpresas</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E599" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Integración WhatsApp Business Oficial</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E599" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Soporte local en Colombia</span>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE AGENT ACTION SIMULATOR DEMO -->
+      <div class="simulator-card spotlight-card reveal">
+        <div class="simulator-header">
+          <div class="window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div style="font-size:0.85rem; color:var(--text-muted); font-weight:700;">
+            DEMO EN VIVO: Agente Operata AI vs Sistemas Enterprise
+          </div>
+          <div class="simulator-tabs">
+            <button class="sim-tab active" data-scenario="devolucion">Devolución ERP (Retail)</button>
+            <button class="sim-tab" data-scenario="factura">Facturación DIAN</button>
+            <button class="sim-tab" data-scenario="soporte">Diagnóstico Técnico</button>
+          </div>
+        </div>
+
+        <div class="simulator-body">
+          <div class="sim-chat" id="sim-chat-container">
+            <!-- Dynamic Chat Generated via JavaScript -->
+          </div>
+
+          <div class="sim-execution-panel">
+            <div class="panel-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Trazabilidad & Ejecución en Sistemas (Audit Log)
+            </div>
+            <div class="action-step-list" id="sim-action-steps">
+              <!-- Dynamic Steps Generated via JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ANIMATED METRICS & TRUST BANNER
+       ========================================== -->
+  <section class="trust-banner">
+    <div class="container">
+      <div class="trust-title">
+        Empresas líderes en Colombia y Latinoamérica automatizan operaciones reales con Operata AI
+      </div>
+      <div class="logo-grid">
+        <div class="logo-item">🏦 BancoAndino</div>
+        <div class="logo-item">🛍️ GrupoRetail LATAM</div>
+        <div class="logo-item">🚚 LogísticaExpress</div>
+        <div class="logo-item">🏥 SaludIntegral</div>
+        <div class="logo-item">⚡ TelecomColombia</div>
+      </div>
+
+      <div class="metrics-grid reveal">
+        <div>
+          <div class="metric-number" data-counter="1248500">0</div>
+          <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Acciones Ejecutadas / mes</p>
+        </div>
+        <div>
+          <div class="metric-number">99.98%</div>
+          <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Uptime SLAs Enterprise</p>
+        </div>
+        <div>
+          <div class="metric-number">&lt; 1.4s</div>
+          <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Tiempo Promedio Respuesta</p>
+        </div>
+        <div>
+          <div class="metric-number">3.8x</div>
+          <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">ROI Promedio Demostrado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       INTERACTIVE WORKFLOW BUILDER SANDBOX
+       ========================================== -->
+  <section class="section-padding" id="orquestador">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">El Orquestador de Agentes</div>
+        <h2>Diseñe flujos de acción sin código y audite cada llamada API en vivo</h2>
+        <p>Haga clic en los nodos de la tubería para inspeccionar las reglas de gobernanza o presione ejecutar para simular el log de producción.</p>
+      </div>
+
+      <div class="workflow-sandbox spotlight-card reveal">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+          <h4 style="font-size:1.1rem; color:var(--text-primary);">Pipeline de Ejecución: Reembolso Autónomo</h4>
+          <button class="btn btn-primary btn-sm" id="run-workflow-btn">
+            ▶ Simular Flujo Completo en Vivo
+          </button>
+        </div>
+
+        <div class="pipeline-nodes">
+          <div class="pipeline-node active" data-step="trigger">
+            <div class="pipeline-icon">💬</div>
+            <h5>01. Trigger WhatsApp</h5>
+            <p style="font-size:0.75rem; color:var(--text-secondary);">Webhook Cloud API</p>
+          </div>
+
+          <div class="pipeline-node" data-step="rbac">
+            <div class="pipeline-icon">🛡️</div>
+            <h5>02. Gobernanza & RBAC</h5>
+            <p style="font-size:0.75rem; color:var(--text-secondary);">Filtro de Seguridad</p>
+          </div>
+
+          <div class="pipeline-node" data-step="erp">
+            <div class="pipeline-icon">⚡</div>
+            <h5>03. Acción Siigo / SAP</h5>
+            <p style="font-size:0.75rem; color:var(--text-secondary);">Escritura API REST</p>
+          </div>
+
+          <div class="pipeline-node" data-step="audit">
+            <div class="pipeline-icon">📜</div>
+            <h5>04. Audit Log & Envíos</h5>
+            <p style="font-size:0.75rem; color:var(--text-secondary);">Trazabilidad DIAN/WhatsApp</p>
+          </div>
+        </div>
+
+        <div class="terminal-console" id="terminal-console">
+          <div class="log-line log-info">[06:38:10] INFO  Incoming webhook received from Meta WhatsApp Cloud API</div>
+          <div class="log-line log-info">[06:38:10] INFO  User phone: +57 310 892 4410 (Bogotá, Colombia)</div>
+          <div class="log-line log-success">[06:38:10] SUCCESS Session authenticated (Session Token #TK-88912)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       THE PROBLEM SECTION: PILOT TO PRODUCTION GAP
+       ========================================== -->
+  <section class="section-padding problem-section" id="problema">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="stat-card-main spotlight-card reveal">
+          <div class="stat-big">87%</div>
+          <div class="stat-label">de los pilotos de IA en empresas nunca llegan a producción real en LATAM.</div>
+          <p style="color:var(--text-secondary); font-size:0.95rem;">
+            Fuente: Análisis interno del mercado corporativo 2025-2026. Las organizaciones invierten meses entrenando chatbots que solo saben recitar artículos de ayuda.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <div class="badge" style="background:rgba(239,68,68,0.1); border-color:rgba(239,68,68,0.3); color:#F87171;">
+            La Gran Paradoja de la IA Empresarial
+          </div>
+          <h2>Por qué los chatbots tradicionales frustran a sus clientes y a su equipo técnico</h2>
+          
+          <div class="problem-list">
+            <div class="problem-item">
+              <div class="problem-icon">✕</div>
+              <div>
+                <h4 style="color:var(--text-primary); font-size:1.1rem; margin-bottom:0.25rem;">Solo responden, no resuelven</h4>
+                <p>El cliente pregunta por su reembolso y el bot responde con un enlace a los "Términos y Condiciones" en vez de consultar el ERP y generar la transacción.</p>
+              </div>
+            </div>
+
+            <div class="problem-item">
+              <div class="problem-icon">✕</div>
+              <div>
+                <h4 style="color:var(--text-primary); font-size:1.1rem; margin-bottom:0.25rem;">Facturación opaca por "créditos" o interacciones</h4>
+                <p>Modelos de cobro ambiguos donde usted paga por cada conversación donde el bot falló y terminó derivando al agente humano.</p>
+              </div>
+            </div>
+
+            <div class="problem-item">
+              <div class="problem-icon">✕</div>
+              <div>
+                <h4 style="color:var(--text-primary); font-size:1.1rem; margin-bottom:0.25rem;">Gobernanza como "Add-on Enterprise" costoso</h4>
+                <p>Obligan a contratar consultorías de 6 meses solo para obtener permisos de acceso de usuarios y logs de auditoría indispensables para cumplir regulaciones locales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       INTERACTIVE BOT VS OPERATA BATTLE ARENA
+       ========================================== -->
+  <section class="section-padding" id="diferenciadores">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Arena de Comparación</div>
+        <h2>Chatbot RAG Tradicional vs Agente Operata AI en Acción</h2>
+        <p>Seleccione una solicitud real de un cliente y observe la diferencia entre un bot que solo responde texto y un agente que resuelve en sus sistemas.</p>
+      </div>
+
+      <div class="battle-arena spotlight-card reveal">
+        <div class="battle-selector">
+          <button class="battle-btn active" data-case="cambio">Caso 1: Cambio de Producto Talla M</button>
+          <button class="battle-btn" data-case="factura">Caso 2: Factura Electrónica DIAN</button>
+          <button class="battle-btn" data-case="cita">Caso 3: Agendamiento de Cita</button>
+        </div>
+
+        <div class="battle-grid">
+          <div class="battle-box traditional">
+            <span class="battle-tag red">Chatbot RAG Tradicional (Solo Texto)</span>
+            <div style="font-size:0.92rem; color:var(--text-secondary);" id="battle-trad-text">
+              No puedo realizar cambios directamente por este medio. Por favor descargue nuestro PDF de políticas de cambio en www.tienda.com/politicas o acérquese a una tienda física con su factura impresa en horario de 8am a 5pm.
+            </div>
+          </div>
+
+          <div class="battle-box operata">
+            <span class="battle-tag green">Operata AI Agent (Acción Real)</span>
+            <div style="font-size:0.92rem; color:var(--text-primary);" id="battle-operata-text">
+              ✅ ¡Cambio autorizado en 1.2s! Consulté tu factura #9841 en Siigo ERP, reservé la talla M en bodega Bogotá y envié el código QR de Servientrega a tu WhatsApp.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARISON TABLE -->
+      <div style="margin-top: 4rem;">
+        <div class="comparison-container reveal">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Capacidad / Característica</th>
+                <th>Chatbots RAG Genéricos</th>
+                <th>Desarrollo Custom / Consultoría</th>
+                <th class="highlight-col">Operata AI (Acción Real)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Escritura en ERP/CRM</strong></td>
+                <td><span class="cross-icon">✕ No (Solo lectura/FAQ)</span></td>
+                <td><span class="check-icon">✓ Sí (Tras 6 meses dev)</span></td>
+                <td class="highlight-col"><span class="check-icon">✓ Sí (Nativo día 1)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Modelo de Precios</strong></td>
+                <td>Cobro opaco por créditos/interacciones</td>
+                <td>Mantenimiento costoso dedicado</td>
+                <td class="highlight-col"><strong>Predecible mensual/anual</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Audit Logs & Gobernanza</strong></td>
+                <td>Add-on Enterprise costoso</td>
+                <td>Debe construirse desde cero</td>
+                <td class="highlight-col"><span class="check-icon">✓ Incluido desde plan base</span></td>
+              </tr>
+              <tr>
+                <td><strong>WhatsApp Business Cloud API</strong></td>
+                <td>Vía intermediarios con latencia</td>
+                <td>Infraestructura propia requerida</td>
+                <td class="highlight-col"><span class="check-icon">✓ Conexión Directa Meta</span></td>
+              </tr>
+              <tr>
+                <td><strong>Tiempo Salida a Producción</strong></td>
+                <td>3 a 6 semanas</td>
+                <td>4 a 8 meses</td>
+                <td class="highlight-col"><strong>3 a 7 días hábiles</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Soporte Local Colombia / LATAM</strong></td>
+                <td>Soporte por ticket en inglés</td>
+                <td>Depende del proveedor contratado</td>
+                <td class="highlight-col"><span class="check-icon">✓ Equipo 24/7 local en español</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SOLUTION & FEATURES
+       ========================================== -->
+  <section class="section-padding" id="solucion">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Nuestra Solución</div>
+        <h2>Diseñado para la complejidad del entorno corporativo latinoamericano</h2>
+        <p>Una arquitectura agentica donde la IA tiene conectores de escritura seguros a sus bases de datos y sistemas legados.</p>
+      </div>
+
+      <div class="solution-grid">
+        <div class="feature-card spotlight-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Acción Directa en Sistemas</h3>
+          <p>Los agentes leen y escriben en su software corporativo mediante conectores listos para producción. Realizan cancelaciones, emisiones de facturas y agendamientos autónomamente.</p>
+          <div class="connector-tags">
+            <span class="connector-tag">Siigo / World Office</span>
+            <span class="connector-tag">SAP S/4HANA</span>
+            <span class="connector-tag">Salesforce / HubSpot</span>
+            <span class="connector-tag">Zendesk / Freshdesk</span>
+          </div>
+        </div>
+
+        <div class="feature-card spotlight-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Gobernanza Nativa desde Día 1</h3>
+          <p>No cobramos la seguridad como un extra. Incluye auditoría detallada de cada paso, control de roles (RBAC) y la posibilidad de exigir aprobación humana para operaciones sensibles.</p>
+          <div class="connector-tags">
+            <span class="connector-tag">Audit Trails en Tiempo Real</span>
+            <span class="connector-tag">Human-In-The-Loop (HITL)</span>
+            <span class="connector-tag">Cumplimiento Ley 1581 (Habeas Data)</span>
+          </div>
+        </div>
+
+        <div class="feature-card spotlight-card reveal">
+          <div class="feature-icon-wrapper">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h3>Integración Nativa WhatsApp Business</h3>
+          <p>Conexión directa con la API oficial de WhatsApp Cloud. Soporte completo para envío de documentos PDF, botones interactivos, ubicación geográfica y notas de voz.</p>
+          <div class="connector-tags">
+            <span class="connector-tag">Meta Cloud API</span>
+            <span class="connector-tag">Multi-agente Híbrido</span>
+            <span class="connector-tag">Plantillas Aprobadas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PRICING SECTION & DYNAMIC ROI CHART
+       ========================================== -->
+  <section class="section-padding" id="precios" style="background: rgba(15, 23, 42, 0.3);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Precios Transparentes</div>
+        <h2>Precios claros y escalables sin penalizaciones por volumen</h2>
+        <p>Seleccione su moneda local y el ciclo de facturación que mejor se adapte a su presupuesto corporativo.</p>
+      </div>
+
+      <div class="pricing-controls reveal">
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+          <div class="pricing-switches">
+            <button class="pricing-switch-btn active" data-currency="COP">COP ($ Pesos)</button>
+            <button class="pricing-switch-btn" data-currency="USD">USD ($ Dólares)</button>
+          </div>
+
+          <div class="pricing-switches">
+            <button class="pricing-switch-btn active" data-cycle="annual">Anual <span class="discount-tag">Ahorra 20%</span></button>
+            <button class="pricing-switch-btn" data-cycle="monthly">Mensual</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-grid reveal">
+        <!-- PLAN STARTER -->
+        <div class="pricing-card spotlight-card" data-plan="starter">
+          <div class="plan-name">Starter</div>
+          <div class="plan-desc">Ideal para validar la automatización de acciones en 1 proceso clave de CX.</div>
+          <div class="plan-price-wrapper">
+            <span class="plan-currency">$</span>
+            <span class="plan-price">790.000 COP</span>
+            <div class="plan-period">/mes (facturado anualmente)</div>
+          </div>
+          <ul class="plan-features">
+            <li><span>✓</span> 1 Agente de Acción Activo</li>
+            <li><span>✓</span> Hasta 5.000 ejecuciones/mes</li>
+            <li><span>✓</span> Conectores a CRM Estándar</li>
+            <li><span>✓</span> WhatsApp Business Cloud API</li>
+            <li><span>✓</span> Audit Logs por 30 días</li>
+            <li><span>✓</span> Soporte vía email & chat</li>
+          </ul>
+          <a href="#demo" class="btn btn-secondary btn-full trigger-demo-modal">Iniciar con Starter</a>
+        </div>
+
+        <!-- PLAN PRO (POPULAR) -->
+        <div class="pricing-card popular spotlight-card" data-plan="pro">
+          <div class="popular-badge">Más Elegido por Empresas</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-desc">Para operaciones medianas que requieren integración con ERPs y trazabilidad.</div>
+          <div class="plan-price-wrapper">
+            <span class="plan-currency">$</span>
+            <span class="plan-price">1.890.000 COP</span>
+            <div class="plan-period">/mes (facturado anualmente)</div>
+          </div>
+          <ul class="plan-features">
+            <li><span>✓</span> Hasta 3 Agentes de Acción</li>
+            <li><span>✓</span> Hasta 25.000 ejecuciones/mes</li>
+            <li><span>✓</span> Conexión Directa a ERPs (Siigo, SAP, etc.)</li>
+            <li><span>✓</span> Aprobación Humana (HITL Workflow)</li>
+            <li><span>✓</span> Audit Logs por 1 año</li>
+            <li><span>✓</span> Soporte Prioritario WhatsApp</li>
+          </ul>
+          <a href="#demo" class="btn btn-primary btn-full trigger-demo-modal">Solicitar Demo de Pro</a>
+        </div>
+
+        <!-- PLAN BUSINESS -->
+        <div class="pricing-card spotlight-card" data-plan="business">
+          <div class="plan-name">Business</div>
+          <div class="plan-desc">Para grandes volúmenes con múltiples canales y guardrails avanzados.</div>
+          <div class="plan-price-wrapper">
+            <span class="plan-currency">$</span>
+            <span class="plan-price">3.990.000 COP</span>
+            <div class="plan-period">/mes (facturado anualmente)</div>
+          </div>
+          <ul class="plan-features">
+            <li><span>✓</span> Hasta 8 Agentes de Acción</li>
+            <li><span>✓</span> Hasta 100.000 ejecuciones/mes</li>
+            <li><span>✓</span> Conectores Custom & Webhooks</li>
+            <li><span>✓</span> Múltiples entornos (Staging / Prod)</li>
+            <li><span>✓</span> Controles RBAC Avanzados</li>
+            <li><span>✓</span> Gerente de Cuenta Dedicado</li>
+          </ul>
+          <a href="#demo" class="btn btn-secondary btn-full trigger-demo-modal">Contactar Ventas</a>
+        </div>
+
+        <!-- PLAN ENTERPRISE -->
+        <div class="pricing-card spotlight-card" data-plan="enterprise">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-desc">SLA garantizado, opción VPC/On-Premise y desarrollos a medida.</div>
+          <div class="plan-price-wrapper">
+            <span class="plan-currency"></span>
+            <span class="plan-price">Personalizado</span>
+            <div class="plan-period">Según requerimientos del cliente</div>
+          </div>
+          <ul class="plan-features">
+            <li><span>✓</span> Agentes & Ejecuciones Ilimitadas</li>
+            <li><span>✓</span> Despliegue en Nube Privada (VPC)</li>
+            <li><span>✓</span> SLA de Disponibilidad 99.9%</li>
+            <li><span>✓</span> Auditoría SOC 2 & Cumplimiento ISO</li>
+            <li><span>✓</span> Capacitación in-company</li>
+            <li><span>✓</span> Soporte 24/7 Telefónico Directo</li>
+          </ul>
+          <a href="#demo" class="btn btn-secondary btn-full trigger-demo-modal">Hablar con Arquitecto</a>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE ROI CALCULATOR WITH SVG CHART -->
+      <div class="roi-calculator spotlight-card reveal">
+        <div class="roi-grid">
+          <div>
+            <div class="badge" style="margin-bottom:0.75rem;">Calculadora de Retorno de Inversión</div>
+            <h3 style="font-size:1.6rem; margin-bottom:1rem;">Calcule su ahorro mensual estimado</h3>
+            <p style="font-size:0.95rem; margin-bottom:1.5rem;">
+              Deslice la cantidad de conversaciones/tickets que su equipo atiende al mes para ver el impacto económico directo de la ejecución autónoma de acciones.
+            </p>
+
+            <label for="ticket-slider" style="font-weight:700; color:var(--text-primary);">
+              Volumen mensual de tickets/interacciones: <span id="ticket-value-display" class="text-highlight">15.000</span>
+            </label>
+            <input type="range" id="ticket-slider" class="range-slider" min="2000" max="100000" step="1000" value="15000">
+            <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-muted);">
+              <span>2.000</span>
+              <span>50.000</span>
+              <span>100.000+</span>
+            </div>
+          </div>
+
+          <div class="roi-result-box">
+            <div style="font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-secondary); margin-bottom:0.5rem;">
+              Ahorro Estimado Operativo
+            </div>
+            <div class="roi-savings" id="roi-savings-display">$ 103.680.000 COP</div>
+            <div style="font-size:0.9rem; color:var(--text-secondary); margin-top:0.75rem;">
+              Equivalente a recuperar aproximadamente <strong id="roi-hours-display" style="color:var(--text-primary);">2.160 horas humanas/mes</strong> para su equipo.
+            </div>
+
+            <!-- DYNAMIC SVG CHART -->
+            <div class="roi-chart-container">
+              <svg width="100%" height="100%" viewBox="0 0 200 90" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="emerald-gradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#00E599" stop-opacity="0.8"/>
+                    <stop offset="100%" stop-color="#10B981" stop-opacity="0.2"/>
+                  </linearGradient>
+                </defs>
+                <rect class="roi-chart-bar" x="10" y="70" width="25" height="20" rx="4"/>
+                <rect class="roi-chart-bar" x="50" y="55" width="25" height="35" rx="4"/>
+                <rect class="roi-chart-bar" x="90" y="40" width="25" height="50" rx="4"/>
+                <rect class="roi-chart-bar" x="130" y="25" width="25" height="65" rx="4"/>
+                <rect class="roi-chart-bar" x="170" y="10" width="25" height="80" rx="4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECURITY, GOVERNANCE & COMPLIANCE
+       ========================================== -->
+  <section class="section-padding" id="gobernanza">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Seguridad de Nivel Bancario</div>
+        <h2>Gobernanza y trazabilidad diseñadas para auditorías exigentes</h2>
+        <p>No arriesgue la privacidad ni la integridad de sus datos corporativos.</p>
+      </div>
+
+      <div class="security-grid reveal">
+        <div class="security-card spotlight-card">
+          <div class="security-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Control de Accesos Basado en Roles (RBAC)</h3>
+          <p>Restrinja qué acciones puede ejecutar cada agente según el contexto del usuario autenticado y su nivel de autorización.</p>
+        </div>
+
+        <div class="security-card spotlight-card">
+          <div class="security-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Logs de Auditoría Inmutables</h3>
+          <p>Cada consulta, payload enviado a una API externa y respuesta guardan estampa de tiempo, usuario y token de sesión para auditorías de cumplimiento.</p>
+        </div>
+
+        <div class="security-card spotlight-card">
+          <div class="security-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Cumplimiento Ley 1581 & GDPR</h3>
+          <p>Cifrado en tránsito (TLS 1.3) y en reposo (AES-256). Servidores dedicados con opción de alojamiento regional de datos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FAQ ACCORDION
+       ========================================== -->
+  <section class="section-padding" id="faq" style="background: rgba(15, 23, 42, 0.4);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Preguntas Frecuentes</div>
+        <h2>Resolvemos sus dudas sobre la implementación de agentes de IA</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>¿En qué se diferencia Operata AI de un bot de ChatGPT o un RAG convencional?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Los chatbots de RAG tradicionales se limitan a buscar en documentos de PDF o páginas web y responder texto. <strong>Operata AI posee capacidad de ejecución (Agentic Workflows)</strong>: puede conectarse mediante conectores seguros a su ERP (Siigo, SAP), CRM (Salesforce, HubSpot) o sistemas de facturación para realizar transacciones reales (crear un pedido, modificar una cita, emitir una nota crédito) con validación previa.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo funciona la integración con WhatsApp Business?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Nos conectamos directamente con la API Oficial de WhatsApp Business Cloud (Meta). Esto garantiza la máxima velocidad de respuesta, estabilidad sin caídas y la capacidad de enviar mensajes estructurados (botones de respuesta rápida, listas interactivas, PDFs de facturas) respetando la normativa oficial de Meta.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cuánto tiempo toma poner a funcionar el primer agente en nuestra empresa?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Gracias a nuestros conectores pre-construidos y plantillas de casos de uso de atención al cliente en LATAM, un piloto completo en producción suele tomar entre <strong>3 y 7 días hábiles</strong>, no meses de consultoría.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué sucede si el agente comete una equivocación o no está seguro de la respuesta?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Contamos con un sistema nativo de <strong>Human-In-The-Loop (HITL)</strong> y guardrails de confianza. Si el nivel de certeza del agente está por debajo del umbral configurado o la transacción supera un límite monetario predefinido, la solicitud se transfiere automáticamente a su equipo humano con todo el contexto recopilado.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Se puede pagar en pesos colombianos (COP) o solicitar factura electrónica local?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Sí. Contamos con entidad legal y soporte local en Colombia. Podemos emitir factura electrónica con todos los requisitos de la DIAN y recibir pagos por transferencia bancaria (PSE, Bancolombia, Davivienda) o tarjeta de crédito.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FINAL CTA
+       ========================================== -->
+  <section class="section-padding" id="demo">
+    <div class="container">
+      <div class="final-cta reveal">
+        <h2>¿Listo para llevar sus agentes de IA de piloto a producción real?</h2>
+        <p style="max-width:640px; margin:1.25rem auto 2.25rem auto;">
+          Únase a las empresas líderes de Colombia y Latinoamérica que están automatizando ejecuciones reales en sus sistemas con gobernanza total.
+        </p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="#" class="btn btn-primary trigger-demo-modal" style="font-size:1.1rem; padding:1.1rem 2.2rem;">
+            Agendar Demo Personalizada con un Especialista
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="logo" style="margin-bottom:1rem; display:inline-flex;">
+            <div class="logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <!-- REEMPLAZAR CON TU NOMBRE DE EMPRESA -->
+            <span>Operata<span class="text-highlight">.ai</span></span>
+          </a>
+          <p style="font-size:0.88rem; max-width:320px; color:var(--text-muted);">
+            Plataforma enterprise de agentes de IA de acción real para medianas y grandes empresas en LATAM.
+          </p>
+          <p style="font-size:0.8rem; margin-top:1rem; color:var(--text-muted);">
+            📍 Presencia en Bogotá, Colombia & Ciudad de México.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Producto</h5>
+          <ul class="footer-links">
+            <li><a href="#solucion">Conectores ERP/CRM</a></li>
+            <li><a href="#orquestador">Orquestador de Agentes</a></li>
+            <li><a href="#gobernanza">Gobernanza & Audit Logs</a></li>
+            <li><a href="#precios">Planes & Precios</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Recursos</h5>
+          <ul class="footer-links">
+            <li><a href="#">Casos de Éxito LATAM</a></li>
+            <li><a href="#">Documentación API</a></li>
+            <li><a href="#">Guía de Ley 1581 (Data Privacy)</a></li>
+            <li><a href="#">Estado del Servicio (Uptime)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Compañía</h5>
+          <ul class="footer-links">
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Contacto Local Colombia</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Política de Privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Operata AI Technologies LLC. Todos los derechos reservados.
+        </div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="#" style="color:var(--text-muted); text-decoration:none;">LinkedIn</a>
+          <a href="#" style="color:var(--text-muted); text-decoration:none;">Twitter / X</a>
+          <a href="#" style="color:var(--text-muted); text-decoration:none;">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       DEMO REQUEST MODAL POPUP
+       ========================================== -->
+  <div class="modal-backdrop" id="demo-modal">
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Cerrar">&times;</button>
+      <div class="badge" style="margin-bottom:0.5rem;">Prueba de Concepto Enterprise</div>
+      <h3 style="margin-bottom:0.5rem;">Agendar Demo de Operata AI</h3>
+      <p style="font-size:0.9rem; margin-bottom:1.5rem;">
+        Complete sus datos y un arquitecto de soluciones de nuestro equipo en Colombia lo contactará para armar una demostración personalizada con sus sistemas.
+      </p>
+
+      <form id="demo-request-form">
+        <div class="form-group">
+          <label for="name">Nombre Completo *</label>
+          <input type="text" id="name" class="form-input" placeholder="Ej. Carlos Mendoza" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Corporativo *</label>
+          <input type="email" id="email" class="form-input" placeholder="carlos@empresa.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Empresa & Cargo *</label>
+          <input type="text" id="company" class="form-input" placeholder="Ej. Grupo Exito - Gerente de CX" required>
+        </div>
+
+        <div class="form-group">
+          <label for="system">Sistema principal a integrar (Opcional)</label>
+          <input type="text" id="system" class="form-input" placeholder="Ej. SAP, Siigo, Salesforce, Zendesk">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full" style="margin-top:1rem;">
+          Solicitar Demostración Personalizada
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
