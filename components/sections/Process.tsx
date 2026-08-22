@@ -87,7 +87,7 @@ export function Process() {
             {processSteps.map((step, index) => {
               const isActive = activeStep === index
               return (
-                <FadeInWhenVisible key={step.number} delay={0.1 + index * 0.1}>
+                <FadeInWhenVisible key={step.number} delay={index * 0.05}>
                   <button
                     onClick={() => setActiveStep(index)}
                     className={`w-full group flex flex-col p-6 rounded-3xl border text-left transition-all duration-300 ${

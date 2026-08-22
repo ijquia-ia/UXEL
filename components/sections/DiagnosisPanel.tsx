@@ -149,12 +149,12 @@ export function DiagnosisPanel() {
                       <button
                         key={idx}
                         onClick={() => handleSelectOption(option.points, option.recommendation)}
-                        className="group flex items-center justify-between p-5 rounded-2xl border border-slate-200 bg-slate-50/70 text-left transition-all hover:border-cyan-400 hover:bg-cyan-50/50 hover:shadow-sm"
+                        className="group flex items-center justify-between gap-4 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 text-left transition-all hover:border-cyan-400 hover:bg-cyan-50/50 hover:shadow-sm"
                       >
                         <span className="font-body text-base font-medium text-slate-800 group-hover:text-slate-950 transition-colors">
                           {option.label}
                         </span>
-                        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:bg-cyan-600 group-hover:text-white group-hover:border-cyan-600 transition-all">
+                        <span className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:bg-cyan-600 group-hover:text-white group-hover:border-cyan-600 transition-all">
                           <ChevronRight size={18} />
                         </span>
                       </button>

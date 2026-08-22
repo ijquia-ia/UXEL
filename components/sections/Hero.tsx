@@ -26,7 +26,7 @@ export function Hero() {
               <span className="font-bold">FULL STACK · WEB · MÓVIL · CLOUD · IA</span>
             </div>
 
-            <h1 className="font-display text-[clamp(2.8rem,5.5vw,5.5rem)] font-extrabold leading-[0.94] tracking-tight">
+            <h1 className="font-display text-[clamp(2.1rem,8vw,5.5rem)] font-extrabold leading-[1.05] md:leading-[0.94] tracking-tight">
               Software que convierte<br />
               ideas en <span className="text-gradient-cyan">productos reales.</span>
             </h1>
@@ -50,7 +50,7 @@ export function Hero() {
               </a>
             </div>
 
-            <div className="mt-12 grid grid-cols-3 gap-6 border-t border-slate-200/80 dark:border-white/[0.06] pt-6">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 border-t border-slate-200/80 dark:border-white/[0.06] pt-6">
               <div>
                 <div className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">FULL STACK</div>
                 <div className="font-mono text-[11px] text-slate-500 mt-1 font-semibold">WEB · BACKEND · APIs</div>

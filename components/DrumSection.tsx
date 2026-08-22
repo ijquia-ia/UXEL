@@ -46,7 +46,7 @@ export function DrumSection({ children, className = '', id }: DrumSectionProps) 
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.22, 0.78, 1],
-    [0, 1, 1, 0],
+    [0.15, 1, 1, 0.15],
   )
 
   /* ─── Scale ──────────────────────────────────────────────────

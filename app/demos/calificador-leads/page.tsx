@@ -1,2 +1,8 @@
+import { Metadata } from 'next'
 import { LeadScorer } from '@/components/demos/LeadScorer'
+
+export const metadata: Metadata = {
+  title: 'Demo Calificador de Leads',
+  description: 'Simulador de calificación de leads en tiempo real con Inteligencia Artificial. Prueba cómo enrutar prospectos de manera automática.',
+}
 export default function LeadsPage(){return <main className="min-h-screen px-6 py-10 md:px-10"><div className="mx-auto max-w-4xl"><a href="/" className="font-mono text-xs text-ink/60 hover:text-ink">← VOLVER A UXEL</a><p className="mt-14 font-mono text-sm text-emerald">DEMO / CALIFICADOR DE LEADS</p><h1 className="mt-4 font-display text-5xl font-bold tracking-tight">Cada lead, al siguiente paso correcto.</h1><p className="mt-5 max-w-2xl leading-7 text-ink/70">Combina señales básicas para orientar una primera respuesta comercial.</p><p className="mt-8 border-l-2 border-cyan bg-secondary p-4 text-sm text-ink/70">Este cálculo es una simulación local ilustrativa; no es un sistema en producción.</p><LeadScorer/></div></main>}

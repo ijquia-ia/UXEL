@@ -78,6 +78,9 @@ export const metadata: Metadata = {
       'Automatización con n8n, Agentes IA, bots para WhatsApp/Telegram y desarrollo full stack para empresas en Latinoamérica.',
     images: ['/og-image.png'],
   },
+  verification: {
+    google: 'AÑADE_TU_CODIGO_DE_GOOGLE_SEARCH_CONSOLE_AQUI',
+  },
   robots: {
     index: true,
     follow: true,
