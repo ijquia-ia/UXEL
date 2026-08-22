@@ -177,9 +177,17 @@ function LiquidSpacetimeSurface() {
 
 export function SpacetimeGrid() {
   const [mounted, setMounted] = useState(false)
+  const [isMobile, setIsMobile] = useState(true)
 
-  useEffect(() => setMounted(true), [])
-  if (!mounted) return null
+  useEffect(() => {
+    setMounted(true)
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
+  if (!mounted || isMobile) return null
 
   return (
     <SpacetimeErrorBoundary>
